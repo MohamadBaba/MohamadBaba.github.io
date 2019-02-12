@@ -1,221 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  min-width: 250px;
-}
+     <link href="style.css" type="text/css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+     <title>Project Name</title>
 
-/* Include the padding and border in an element's total width and height */
-* {
-  box-sizing: border-box;
-}
-
-/* Remove margins and padding from the list */
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-/* Style the list items */
-ul li {
-  cursor: pointer;
-  position: relative;
-  padding: 12px 8px 12px 40px;
-  list-style-type: none;
-  background: #e6b3ff;
-  font-size: 18px;
-  transition: 0.2s;
-  
-  /* make the list items unselectable */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
-}
-
-/* Darker background-color on hover */
-ul li:hover {
-  background: #ddd;
-}
-
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
-
-/* Add a "checked" mark when clicked on */
-ul li.checked::before {
-  content: '';
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  border-width: 0 2px 2px 0;
-  top: 10px;
-  left: 16px;
-  transform: rotate(45deg);
-  height: 15px;
-  width: 7px;
-}
-
-/* Style the close button */
-.close {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 12px 16px 12px 16px;
-}
-
-.close:hover {
-  background-color: #f44336;
-  color: white;
-}
-
-/* Style the header */
-.header {
-  background-color: #f44336;
-  padding: 30px 40px;
-  color: white;
-  text-align: center;
-}
-
-/* Clear floats after the header */
-.header:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Style the input */
-input {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-  width: 75%;
-  padding: 10px;
-  float: left;
-  font-size: 16px;
-}
-
-/* Style the "Add" button */
-.addBtn {
-  padding: 10px;
-  width: 25%;
-  background: #d9d9d9;
-  color: #555;
-  float: left;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 0;
-}
-
-.addBtn:hover {
-  background-color: #bbb;
-}
-</style>
 </head>
 <body>
-
-<div id="myDIV" class="header">
-  
-  <h2 style="margin:5px">Mhmd & Sara's To Eat List</h2>
-  <form action="mailto:mohamadbaba98@gmail.com" method="post" enctype="text/plain">
-  <input type="text" name="Suggestion" placeholder="Whats the new place?">
-  <input type="submit" value="Request Mhmd's Approval" class = "addBtn">
-  </form>
+    
+<div class="back">
+    <div class="nav">
+        <logo><img src=""></logo>
+        <nav>
+            <a href="">About Us</a>
+            <a href="">Contact Us</a>
+            <a href="">Register</a>
+            <a href="">Login</a>
+        </nav>
+    </div>
+    
+    <h1>Welcome To The Website</h1>
+    
+   <div class="w3-container">
 </div>
-<h2 align="center">Lunch/Dinner<h2>
-<ul id="myUL">
 
-  <li>Tigers</li>
-  <li>Mac n Cheese</li>
-  <li>The Burger Shop</li>
-  <li>Juicy Grill  [Desserts here are good too]</li>
-</ul>
-<h2 align="center">Dessert<h2>
-<ul id="myUL">
+<div class="w3-content w3-display-container" style="max-width:800px">
+  <img class="mySlides" src="1.jpg" style="width:804px; height: 400px; align-content: center;">
+  <img class="mySlides" src="2.jpg" style="width:804px; height: 400px; align-content: center;">
+  <img class="mySlides" src="3.jpg" style="width:804px; height: 400px; align-content: center;">
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:804px">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+</div> 
+    
+    
 
-  <li>Crunchy flakes</li>
-  <li>Hudson donuts</li>
-  <li>Cold Stone</li>
-  <li>IHop</li>
-  <li>Conut (2nd visit)    [icecream topping for insta]</li>
-  <li>My'Tellaria</li>
-  <li class = "checked">Conut</li>
-</ul>
-<br>
-<div style="display: flex; justify-content: center;">
-	<IMG SRC="http://bestanimations.com/Food/JunkFood/doughnut-funny-animated-gif.gif" style="width: 200px; height: 150px;">
-<div style="display: flex; justify-content: center;">
+    <script>
+var slideIndex = 1;
+showDivs(slideIndex);
 
-<script>
-// Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-//for (i = 0; i < myNodelist.length; i++) {
- // var span = document.createElement("SPAN");
- // var txt = document.createTextNode("\u00D7");
-  //span.className = "close";
- // span.appendChild(txt);
- // myNodelist[i].appendChild(span);
-//}
-
-// Click on a close button to hide the current list item
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  }
+function plusDivs(n) {
+  showDivs(slideIndex += n);
 }
 
-// Add a "checked" symbol when clicking on a list item
-var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  if (ev.target.tagName === 'LI') {
-    ev.target.classList.toggle('checked');
-  }
-}, false);
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
 
-// Create a new list item when clicking on the "Add" button
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
   }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
   }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
 }
 </script>
 
+
+<footer>
+    <p>2019</p>
+</footer>
+    </div>
 </body>
+
 </html>
