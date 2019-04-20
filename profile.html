@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!–– This is the NAV bar, enable / disable for each page ––>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary nav-pills">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" style="color: aliceblue">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="#" style="color:aliceblue;">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Find Connections</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0" name="searchNav" id="searchNav">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <br />
+
+    <!-- Sliding side navigation bar-->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Friend 1</li>
+                <li class="list-group-item">Friend 2</li>
+                <li class="list-group-item">Friend 3</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="main">
+
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Chat Window</span>
+    </div>
+
+    <!--Creation Buttons to expand corresponding cards -->
+    <div class="container shadow p-3 mb-5 bg-light rounded">
+
+        <h2 style="text-align: center">Share whats going on through you head!</h2>
+        <br />
+
+        <div class="text-cente" style="align-items: center">
+
+            <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#statusCollapse" aria-expanded="false" aria-controls="statusCollapse">
+                Set Your Status
+            </button>
+            <button class="btn btn-primary btn-block" type="button" data-toggle="collapse" data-target="#postCollapse" aria-expanded="false" aria-controls="postCollapse">
+                Create Post
+            </button>
+            <br />
+            <br />
+        </div>
+
+        <!-- Contains creation options-->
+        <div class="bg-light rounded collapse" id="statusCollapse">
+
+            <!-- Satus creation-->
+            <div id="statusForm" name="statusForm">
+                <div class="card bg-light rounded">
+                    <div class="card-body">
+                        <h4 class="card-title">Whats On Your Mind?</h4>
+                        <form id="statusForm" name="statusForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="How are you feeling?">
+
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="Set Status">
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-light rounded collapse" id="postCollapse">
+
+            <!-- Post creation-->
+            <div id="postForm" name="postForm">
+                <div class="card bg-light rounded">
+                    <div class="card-body">
+                        <h4 class="card-title">Create Your Post Here!!</h4>
+                        <form id="post" name="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Post Title Here...">
+                                <br />
+                                <textarea class="form-control" rows="5" id="postText" name="postText" placeholder="What do you want to share..."></textarea>
+                                <input type="file" class="form-control-file" id="fileUpload name" name="fileUpload">
+                            </div>
+                            <input type="submit" class="btn btn-primary" value="Share Post">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Friend post container-->
+    <div class="container shadow p-3 mb-5 bg-light rounded" id="postContainer">
+        <h2 style="text-align: center">Whats going on with your friends?</h2>
+        <br />
+        <div class="alert alert-info" role="alert" style="text-align: center">
+            <strong>Oh Noo!</strong> None of your friends have posted anything yet :(
+        </div>
+    </div>
+    <!--
+        <div class="card bg-light rounded">
+             These are the content cards 
+             These are the content cards 
+           <div class="card-body">
+
+                <h5 class="card-title">Posted By: Omar</h5>
+
+                <p class="card-text" str>
+                    So I found This Tutorial online, hope it can help someone who needs this like i needed it hahahaha
+                   <video width="600" controls>
+                        <source src="mov_bbb.mp4" type="video/mp4">
+                        <source src="mov_bbb.ogg" type="video/ogg"> Your browser does not support HTML5 video.
+                    </video>
+               </p>
+
+               <a href="#!" class="btn btn-primary">Check Out Post</a>
+           </div>
+
+        </div>
+-->
+
+</body>
+
+</html>
