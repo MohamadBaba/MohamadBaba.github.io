@@ -2,14 +2,13 @@
 <html>
 
 <head>
-
+    <!-- bootstrap stuff -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- side Nav js script -->
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
@@ -21,6 +20,7 @@
             document.getElementById("main").style.marginLeft = "0";
         }
     </script>
+    <!-- side nav style -->
     <style>
         body {
             font-family: "Lato", sans-serif;
@@ -74,12 +74,166 @@
             }
         }
     </style>
+    <!-- PopUp chat box Style -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        
+        .open-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+        }
+        /* The popup chat - hidden by default */
+        
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            width: 500px;
+        }
+        /* Add styles to the form container */
+        
+        .form-container {
+            max-width: 100%;
+            padding: 10px;
+            background-color: white;
+        }
+        /* Full-width textarea */
+        
+        .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+        }
+        /* When the textarea gets focus, do something */
+        
+        .form-container textarea:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+        /* Set a style for the submit/send button */
+        
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        /* Add a red background color to the cancel button */
+        
+        .form-container .cancel {
+            background-color: red;
+        }
+        /* Add some hover effects to buttons */
+        
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+    </style>
+    <!-- pop Up chat window div -->
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
+    <!-- messages style-->
+    <style>
+        bodyr {
+            margin: 0 auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .containerr {
+            border: 2px solid #dedede;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        
+        .darkerr {
+            border-color: #ccc;
+            background-color: #ddd;
+        }
+        
+        .containerr::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        .containerr img {
+            float: left;
+            max-width: 50px;
+            width: 100%;
+            margin-right: 20px;
+            border-radius: 50%;
+        }
+        
+        .containerr img.right {
+            float: right;
+            margin-left: 20px;
+            margin-right: 0;
+        }
+        
+        .time-right {
+            float: right;
+            color: #aaa;
+            font-size: 9px;
+        }
+        
+        .time-left {
+            float: left;
+            color: #999;
+            font-size: 9px;
+        }
+        
+        p {
+            font-size: 12px;
+        }
+        .scrollable{
+            max-height:250px;
+            overflow-y:scroll;
+        }
+    </style>
 
 </head>
 
 <body>
 
-    <!-- This is the NAV bar, enable / disable for each page -->
+  <!--This is the NAV bar, enable / disable for each page -->
     <nav class="navbar navbar-expand-lg navbar-light bg-secondary nav-pills">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,9 +249,6 @@
                     <a class="nav-link" href="#">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Create</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#">Messages</a>
                 </li>
                 <li class="nav-item">
@@ -106,6 +257,10 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="#">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
 
             </ul>
             <form class="form-inline my-2 my-lg-0" name="searchNav" id="searchNav">
@@ -121,9 +276,9 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="card">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Friend 1</li>
-                <li class="list-group-item">Friend 2</li>
-                <li class="list-group-item">Friend 3</li>
+                <li class="list-group-item" onclick="openForm()">Friend 1</li>
+                <li class="list-group-item" onclick="openForm()">Friend 2</li>
+                <li class="list-group-item" onclick="openForm()">Friend 3</li>
             </ul>
         </div>
     </div>
@@ -161,7 +316,13 @@
                         <h4 class="card-title">Whats On Your Mind?</h4>
                         <form id="statusForm" name="statusForm">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="How are you feeling?">
+                                <select class="custom-select" name="statusSelect" id="statusSelect">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Offline</option>
+                                    <option value="2">Online</option>
+                                    <option value="3">Busy</option>
+                                    <option value="4">Not Available</option>
+                                </select>
 
                             </div>
                             <input type="submit" class="btn btn-primary" value="Set Status">
@@ -200,15 +361,14 @@
         <div class="alert alert-info" role="alert" style="text-align: center">
             <strong>Oh Noo!</strong> None of your friends have posted anything yet :(
         </div>
-    </div>
-    <!--
-        <div class="card bg-light rounded">
-             These are the content cards 
-             These are the content cards 
+   
+        <div class="container shadow p-3 mb-5 bg-light rounded">
+
            <div class="card-body">
 
                 <h5 class="card-title">Posted By: Omar</h5>
 
+                     <span class="time-right" style="font-size: 15px;"> 1/12/2019 - 11:01 am</span>
                 <p class="card-text" str>
                     So I found This Tutorial online, hope it can help someone who needs this like i needed it hahahaha
                    <video width="600" controls>
@@ -217,11 +377,101 @@
                     </video>
                </p>
 
-               <a href="#!" class="btn btn-primary">Check Out Post</a>
+                <button class="btn btn-outline-primary " type="button" data-toggle="collapse" data-target="#com" aria-expanded="false" aria-controls="com">
+                View Comments
+            </button>
+               <br />
+               <div id = "com" name = "com" class="collapse">
+                    <div class="list-group">
+                      <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">List group item heading</h5>
+                          <small>3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small>Donec id elit non mi porta.</small>
+                      </a>
+                      <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">List group item heading</h5>
+                          <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                      </a>
+                      <a href="#!" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">List group item heading</h5>
+                          <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                      </a>
+                    </div>
+                <br />
+               
+                   <form>
+               <input class="form-control form-control-lg" type="text" placeholder="What do you think about this post?">
+                <button type="submit" class="btn btn-outline-success">Comment</button>
+                   </form>
+                   
+               </div>
+               
+               
            </div>
 
         </div>
--->
+
+    </div>
+    <!-- Pop Up Chat window-->
+    <div class="chat-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h5>Chat</h5>
+            <div id="messages" name="messages" class = "scrollable">
+                <div class="alert alert-warning" role="alert" style="text-align: center">
+                    <strong>Oh Noo!</strong> It appears that your friend is offline, but all new messages will reach his/her dm's :(
+                </div>
+                <div class="containerr">
+                    <img src="img/3.jpg" alt="Avatar" style="width:100%;">
+                    <p>Hello. How are you today?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+                <div class="containerr">
+                    <img src="img/3.jpg" alt="Avatar" style="width:100%;">
+                    <p>Hello. How are you today?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+                <div class="containerr">
+                    <img src="img/3.jpg" alt="Avatar" style="width:100%;">
+                    <p>Hello. How are you today?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+                <div class="containerr">
+                    <img src="img/3.jpg" alt="Avatar" style="width:100%;">
+                    <p>Hello. How are you today?</p>
+                    <span class="time-right">11:00</span>
+                </div>
+                
+
+                <div class="containerr darker">
+                    <img src="img/2.jpg" alt="Avatar" class="right" style="width:100%;">
+                    <p>Hey! I'm fine. Thanks for asking!</p>
+                    <span class="time-left">11:01</span>
+                </div>
+            </div>
+            
+
+            <div class="input-group input-group-sm">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-sm">Send</span>
+                </div>
+
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <br />
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
 
 </body>
 
